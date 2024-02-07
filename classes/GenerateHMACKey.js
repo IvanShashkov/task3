@@ -5,7 +5,7 @@ class GenerateHMACKey {
         this.computerMove = computerMove
     }
     generateHMAC() {
-        return crypto.createHash('sha3-256').update(this.randomCryptoKey + this.computerMove).digest('hex')
+        return crypto.createHmac('sha3-256', this.randomCryptoKey).update(this.computerMove).digest('hex')
     }
 }
 module.exports = GenerateHMACKey
